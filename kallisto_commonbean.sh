@@ -26,7 +26,7 @@ done
 # download Phaselous vulgaris cds sequence from Phytozome v10 https://genome.jgi.doe.gov/portal/pages/dynamicOrganismDownload.jsf?organism=Pvulgaris
 
 # login to the Phytozome website 
-curl 'https://signon.jgi.doe.gov/signon/create' --data-urlencode 'login=momosan@uga.edu' --data-urlencode 'password=077338Frank' -c cookies > /dev/null
+curl 'https://signon.jgi.doe.gov/signon/create' --data-urlencode 'login=YourLoginame' --data-urlencode 'password=YourPassword' -c cookies > /dev/null
 
 # download cds sequence 
 curl "https://genome.jgi.doe.gov/portal/ext-api/downloads/get_tape_file?blocking=true&url=/Pvulgaris/download/_JAMO/57fecb5f7ded5e3135bc3576/Pvulgaris_442_v2.1.cds.fa.gz" -b cookies > Pvulgaris_cds.fa.gz
