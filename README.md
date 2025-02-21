@@ -1,7 +1,3 @@
-Below is a revised example of a README you could use for your **CommonBean_DE_RNASeq_Pipeline**. It describes the overall workflow for analyzing RNA-seq data using Kallisto and Sleuth, focusing on two common bean genotypes under control and phosphorus stress conditions. Feel free to adjust any sections to align with your specific lab requirements, software versions, or naming conventions.
-
----
-
 # CommonBean_DE_RNASeq_Pipeline
 
 This repository contains a pipeline for conducting RNA-seq differential expression analysis on *Phaseolus vulgaris* (common bean) using [Kallisto](https://pachterlab.github.io/kallisto/) for quantification and [Sleuth](https://pachterlab.github.io/sleuth/) for differential expression analysis. It is designed to handle multiple genotypes and treatments.
