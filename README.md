@@ -84,17 +84,14 @@ gunzip Pvulgaris_cds.fa.gz
 2. **Quantification**  
    - For each sample (paired-end example):
    ```
-   
    mkdir output
-
-for i in {10..21}; do
-  dir="kallisto_SRR81132${i}"
-  file1="SRR81132${i}_1.fastq.gz"
-  file2="SRR81132${i}_2.fastq.gz"
-  kallisto quant -i Pvulgaris_cds.index -o "$dir" "$file1" "$file2" -b 100 -t 4
-done
-
-mv kallisto_SRR81132* output/
+   for i in {10..21}; do
+    dir="kallisto_SRR81132${i}"
+    file1="SRR81132${i}_1.fastq.gz"
+    file2="SRR81132${i}_2.fastq.gz"
+    kallisto quant -i Pvulgaris_cds.index -o "$dir" "$file1" "$file2" -b 100 -t 4
+  done
+  mv kallisto_SRR81132* output/
    ```
    - This step generates abundance estimates (`abundance.h5`, `abundance.tsv`).
 
