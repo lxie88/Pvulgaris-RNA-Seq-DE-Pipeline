@@ -50,9 +50,25 @@ This pipeline was initially conceived to support an RNA-seq study investigating 
 2. **Reference Genome**  
    - Download from the [JGI portal](https://genome.jgi.doe.gov/portal/pages/dynamicOrganismDownload.jsf?organism=Pvulgaris).  
 
-*Example shell script:*  
 ```
-bash download_data.sh
+# Download RNA-seq data with fastq-dump (SRA Toolkit)
+# Data source: NCBI BioProject PRJNA498535
+for n in {10..21}; do
+  fastq-dump --split-files --gzip SRR81132${n}
+done
+
+# Download Phaseolus vulgaris CDS from the JGI Phytozome portal
+# Make sure you have valid credentials to log in
+curl 'https://signon.jgi.doe.gov/signon/create' \
+  --data-urlencode 'login=YourLoginName' \
+  --data-urlencode 'password=YourPassword' \
+  -c cookies > /dev/null
+
+curl "https://genome.jgi.doe.gov/portal/ext-api/downloads/get_tape_file?blocking=true&url=/Pvulgaris/download/_JAMO/57fecb5f7ded5e3135bc3576/Pvulgaris_442_v2.1.cds.fa.gz" \
+  -b cookies > Pvulgaris_cds.fa.gz
+
+gunzip Pvulgaris_cds.fa.gz
+
 ```
 *(Adjust to your own script names and usage.)*
 
