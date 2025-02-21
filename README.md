@@ -70,7 +70,6 @@ curl "https://genome.jgi.doe.gov/portal/ext-api/downloads/get_tape_file?blocking
 gunzip Pvulgaris_cds.fa.gz
 
 ```
-*(Adjust to your own script names and usage.)*
 
 ### Step 2: Quality Control
 - **QC Tools**: While this dataset was already trimmed, you may perform additional QC with [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) or [MultiQC](https://multiqc.info/) to check read quality.  
@@ -80,13 +79,22 @@ gunzip Pvulgaris_cds.fa.gz
 1. **Indexing**  
    - Create a Kallisto index using the *Phaseolus vulgaris* reference transcriptome FASTA.  
    ```
-   kallisto index -i pvulgaris_index.idx <reference_transcriptome>.fasta
+   kallisto index -i Pvulgaris_cds.index Pvulgaris_cds.fa
    ```
 2. **Quantification**  
    - For each sample (paired-end example):
    ```
-   kallisto quant -i pvulgaris_index.idx -o <output_directory> \
-       -b 100 <R1.fastq.gz> <R2.fastq.gz>
+   
+   mkdir output
+
+for i in {10..21}; do
+  dir="kallisto_SRR81132${i}"
+  file1="SRR81132${i}_1.fastq.gz"
+  file2="SRR81132${i}_2.fastq.gz"
+  kallisto quant -i Pvulgaris_cds.index -o "$dir" "$file1" "$file2" -b 100 -t 4
+done
+
+mv kallisto_SRR81132* output/
    ```
    - This step generates abundance estimates (`abundance.h5`, `abundance.tsv`).
 
