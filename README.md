@@ -117,7 +117,7 @@ gunzip Pvulgaris_cds.fa.gz
 - **Volcano Plot / MA Plot**  
   - Use base R, ggplot2, or Sleuth’s plotting functions to visualize significantly differentially expressed genes/transcripts.
 - **Outputs**  
-  - A CSV of significantly differentially expressed genes (`sleuth_significant.csv`)  
+  - A CSV of significantly differentially expressed genes 
   - Additional diagnostic plots and PCA
 
 ---
@@ -149,15 +149,7 @@ install.packages("tidyverse")
    ```
    mkdir data/ reference/ results/ logs/
    ```
-3. **Download data** (Step 1)  
-   ```
-   bash download_data.sh
-   ```
-4. **Perform QC** (Step 2; optional if already done)
-   ```
-   bash run_fastqc.sh
-   ```
-5. **Run Kallisto** (Step 3)
+3. **Run Kallisto** 
    ```
    bash run_kallisto.sh
    ```
@@ -179,10 +171,7 @@ CommonBean_DE_RNASeq_Pipeline/
 │   ├── pvulgaris.fasta         # Reference transcriptome
 │   └── pvulgaris_index.idx     # Kallisto index
 ├── scripts/
-│   ├── download_data.sh
-│   ├── run_fastqc.sh
 │   ├── run_kallisto.sh
-│   └── ...
 ├── R/
 │   └── slueth_commonbean.R     # Main Sleuth script
 ├── results/

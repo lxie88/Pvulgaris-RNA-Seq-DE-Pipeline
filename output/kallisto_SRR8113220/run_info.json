@@ -1,0 +1,9 @@
+{
+	"n_targets": 36995,
+	"n_bootstraps": 100,
+	"n_processed": 18625327,
+	"kallisto_version": "0.43.1",
+	"index_version": 10,
+	"start_time": "Tue Nov  5 17:18:26 2019",
+	"call": "kallisto quant -i Pvulgaris_cds.index -o kallisto_SRR8113220 -b 100 -t 4 SRR8113220_1.fastq.gz SRR8113220_2.fastq.gz"
+}
