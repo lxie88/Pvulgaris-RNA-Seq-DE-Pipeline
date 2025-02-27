@@ -83,7 +83,8 @@ gunzip Pvulgaris_cds.fa.gz
    ```
 2. **Quantification**  
    - For each sample (paired-end example):
-   ```
+
+```
    mkdir output
    for i in {10..21};
    do
