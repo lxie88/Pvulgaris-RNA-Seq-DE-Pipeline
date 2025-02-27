@@ -92,7 +92,7 @@ gunzip Pvulgaris_cds.fa.gz
     kallisto quant -i Pvulgaris_cds.index -o "$dir" "$file1" "$file2" -b 100 -t 4
   done
   mv kallisto_SRR81132* output/
-   ```
+  ```
    - This step generates abundance estimates (`abundance.h5`, `abundance.tsv`).
 
 ### Step 4: Differential Expression with Sleuth
