@@ -116,9 +116,9 @@ gunzip Pvulgaris_cds.fa.gz
 ### Step 5: Visualization & Results
 - **Volcano Plot / MA Plot**  
   - Use base R, ggplot2, or Sleuth’s plotting functions to visualize significantly differentially expressed genes/transcripts.
-  Here is the one example 
+  Here is the one example： 
   ![results\IACImperadorvolcano.png](https://github.com/lxie88/Pvulgaris-RNA-Seq-DE-Pipeline/blob/master/results/IAC%20Imperadorvolcano.png)
-   The volcano plot of IAC Imperador at restrictive Phosphorus (P) level vs IAC
+   This is the volcano plot of IAC Imperador at restrictive Phosphorus (P) level vs IAC
    Imperador at control P level. Dots in green represent non-significant differentially expressedtranscripts; Dots in red represent significant differentially expressed transcripts. 
 - **Outputs**  
   - A CSV of significantly differentially expressed genes 
