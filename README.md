@@ -99,7 +99,7 @@ gunzip Pvulgaris_cds.fa.gz
 
 ### Step 4: Differential Expression with Sleuth
 1. **Prepare Sample Table**  
-   - Construct a metadata table (`sample_id`, `condition`, `genotype`, `path_to_quantification`, etc.). In this example, the table is sraRun.csv
+   - Construct a metadata table (`sample_id`, `condition`, `genotype`, `path_to_quantification`, etc.).
 2. **R Script**  
    - Use the [Sleuth R package](https://pachterlab.github.io/sleuth/) to read the quantification data and perform differential expression analysis.  
    - An example script is provided in `slueth_commonbean.R`.
@@ -116,8 +116,12 @@ gunzip Pvulgaris_cds.fa.gz
 ### Step 5: Visualization & Results
 - **Volcano Plot / MA Plot**  
   - Use base R, ggplot2, or Sleuth’s plotting functions to visualize significantly differentially expressed genes/transcripts.
+  Here is the one example： 
+  ![results\IACImperadorvolcano.png](https://github.com/lxie88/Pvulgaris-RNA-Seq-DE-Pipeline/blob/master/results/IAC%20Imperadorvolcano.png)
+   This is the volcano plot of IAC Imperador at restrictive Phosphorus (P) level vs IAC
+   Imperador at control P level. Dots in green represent non-significant differentially expressedtranscripts; Dots in red represent significant differentially expressed transcripts. 
 - **Outputs**  
-  - A CSV of significantly differentially expressed genes (`sleuth_significant.csv`)  
+  - A CSV of significantly differentially expressed genes 
   - Additional diagnostic plots and PCA
 
 ---
@@ -149,15 +153,7 @@ install.packages("tidyverse")
    ```
    mkdir data/ reference/ results/ logs/
    ```
-3. **Download data** (Step 1)  
-   ```
-   bash download_data.sh
-   ```
-4. **Perform QC** (Step 2; optional if already done)
-   ```
-   bash run_fastqc.sh
-   ```
-5. **Run Kallisto** (Step 3)
+3. **Run Kallisto** 
    ```
    bash run_kallisto.sh
    ```
@@ -179,10 +175,7 @@ CommonBean_DE_RNASeq_Pipeline/
 │   ├── pvulgaris.fasta         # Reference transcriptome
 │   └── pvulgaris_index.idx     # Kallisto index
 ├── scripts/
-│   ├── download_data.sh
-│   ├── run_fastqc.sh
 │   ├── run_kallisto.sh
-│   └── ...
 ├── R/
 │   └── slueth_commonbean.R     # Main Sleuth script
 ├── results/
